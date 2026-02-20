@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Best JSON Formatter, Minifier & Validator Online (Free Tool)</title>
+    <meta name="description" content="Use the best free online JSON Formatter to beautify, validate, and minify your code. Supports file upload/download. 100% secure client-side processing.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-weight='bold' fill='%232563eb'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen p-4 md:p-8">
+
+    <header class="max-w-5xl mx-auto mb-8 text-center">
+        <h1 class="text-4xl font-extrabold text-blue-600 mb-2 tracking-tight">
+            <i class="fa-solid fa-code mr-2"></i>Pro JSON Toolkit
+        </h1>
+        <p class="text-gray-500 font-medium">Format, Validate, and Minify your JSON data securely in browser.</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto bg-white p-4 md:p-6 rounded-2xl shadow-xl border border-gray-100 mb-12">
+        
+        <div class="flex flex-wrap gap-3 mb-4 items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
+            <div class="flex gap-2">
+                <button onclick="document.getElementById('fileInput').click()" class="px-4 py-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 text-sm font-semibold rounded shadow-sm transition-all"><i class="fa-solid fa-file-upload mr-2"></i>Upload File</button>
+                <input type="file" id="fileInput" accept=".json" class="hidden" onchange="uploadFile(event)">
+                <button onclick="clearFields()" class="px-4 py-2 bg-white border border-red-200 hover:bg-red-50 text-red-600 text-sm font-semibold rounded shadow-sm transition-all"><i class="fa-solid fa-trash mr-2"></i>Clear All</button>
+            </div>
+            
+            <div class="flex gap-2">
+                <button onclick="formatJSON()" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded shadow-md transition-all"><i class="fa-solid fa-align-left mr-2"></i>Format / Beautify</button>
+                <button onclick="minifyJSON()" class="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded shadow-md transition-all"><i class="fa-solid fa-compress mr-2"></i>Minify</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="relative">
+                <label class="block text-sm font-bold text-gray-700 mb-2">Raw JSON Input</label>
+                <textarea id="jsonInput" spellcheck="false" class="w-full h-96 p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm resize-y shadow-inner transition-all" placeholder='Paste your messy JSON here...'></textarea>
+            </div>
+
+            <div class="relative">
+                <div class="flex justify-between items-center mb-2">
+                    <label class="block text-sm font-bold text-gray-700">Formatted Output</label>
+                    <div class="flex gap-2">
+                        <button onclick="copyOutput()" class="text-xs px-3 py-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold rounded transition-all"><i class="fa-solid fa-copy mr-1"></i>Copy</button>
+                        <button onclick="downloadJSON()" class="text-xs px-3 py-1 bg-green-100 hover:bg-green-200 text-green-700 font-semibold rounded transition-all"><i class="fa-solid fa-download mr-1"></i>Save .json</button>
+                    </div>
+                </div>
+                <textarea id="jsonOutput" spellcheck="false" class="w-full h-96 p-4 bg-gray-900 text-green-400 border border-gray-800 rounded-lg focus:outline-none font-mono text-sm resize-y shadow-inner transition-all" readonly placeholder="Result will appear here..."></textarea>
+            </div>
+        </div>
+    </main>
+
+    <section class="max-w-5xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-gray-700 leading-relaxed">
+        
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">The Ultimate Free Online JSON Tool for Developers</h2>
+        <p class="mb-6">
+            Welcome to your all-in-one solution for managing JSON data. Whether you need a <strong>JSON Formatter</strong> to make messy code readable, a <strong>JSON Validator</strong> to debug errors, or a <strong>JSON Minifier</strong> to compress data for production, our tool handles it all instantly and securely.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div>
+                <i class="fa-solid fa-wand-magic-sparkles text-blue-500 text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Instant Formatting</h3>
+                <p class="text-sm">Paste raw, ugly JSON strings and transform them into perfectly indented, easy-to-read code structure with a single click.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-lock text-green-500 text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">100% Secure (Client-Side)</h3>
+                <p class="text-sm">Your data never leaves your browser. All processing happens locally, ensuring maximum privacy for sensitive information.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-file-zipper text-purple-500 text-3xl mb-3"></i>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">JSON Minifier</h3>
+                <p class="text-sm">Compress your JSON by removing unnecessary whitespace to reduce file size and improve API performance.</p>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How to use this JSON Toolkit</h3>
+        <ol class="list-decimal pl-6 space-y-3 mb-8">
+            <li><strong>Input Data:</strong> Paste your JSON into the left box, or click "Upload File" to load a <code>.json</code> file directly from your computer.</li>
+            <li><strong>Choose Action:</strong> Click the <strong>"Format / Beautify"</strong> button to make it readable, or <strong>"Minify"</strong> to compress it.</li>
+            <li><strong>Get Results:</strong> The processed JSON will appear in the right box. If there are errors, the tool will highlight them.</li>
+            <li><strong>Use Output:</strong> Click "Copy" to save it to your clipboard, or "Save .json" to download the file.</li>
+        </ol>
+    </section>
+
+    <script>
+        const inputField = document.getElementById('jsonInput');
+        const outputField = document.getElementById('jsonOutput');
+
+        function formatJSON() {
+            if(!inputField.value.trim()) return showError("Please enter JSON data first.");
+            try {
+                const parsed = JSON.parse(inputField.value);
+                outputField.value = JSON.stringify(parsed, null, 4);
+                outputField.className = "w-full h-96 p-4 bg-gray-900 text-green-400 border border-gray-800 rounded-lg focus:outline-none font-mono text-sm resize-y shadow-inner";
+            } catch (e) { showError(e.message); }
+        }
+
+        function minifyJSON() {
+            if(!inputField.value.trim()) return showError("Please enter JSON data first.");
+            try {
+                const parsed = JSON.parse(inputField.value);
+                outputField.value = JSON.stringify(parsed);
+                outputField.className = "w-full h-96 p-4 bg-gray-900 text-green-400 border border-gray-800 rounded-lg focus:outline-none font-mono text-sm resize-y shadow-inner";
+            } catch (e) { showError(e.message); }
+        }
+
+        function showError(msg) {
+            outputField.value = "Invalid JSON!\n\nError: " + msg;
+            outputField.className = "w-full h-96 p-4 bg-gray-900 text-red-400 border border-red-800 rounded-lg focus:outline-none font-mono text-sm resize-y shadow-inner";
+        }
+
+        function clearFields() {
+            inputField.value = '';
+            outputField.value = '';
+            outputField.className = "w-full h-96 p-4 bg-gray-900 text-green-400 border border-gray-800 rounded-lg focus:outline-none font-mono text-sm resize-y shadow-inner";
+        }
+
+        function copyOutput() {
+            if(!outputField.value.trim()) return alert("Nothing to copy!");
+            navigator.clipboard.writeText(outputField.value);
+            alert("Copied to clipboard!");
+        }
+
+        function downloadJSON() {
+            if(!outputField.value.trim()) return alert("Nothing to download!");
+            const blob = new Blob([outputField.value], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "formatted_data.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function uploadFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                inputField.value = e.target.result;
+                formatJSON(); 
+            };
+            reader.readAsText(file);
+        }
+    </script>
+</body>
+</html>
