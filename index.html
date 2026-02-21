@@ -13,7 +13,6 @@
 
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-weight='bold' fill='%232563eb'%3E%7B%7D%3C/text%3E%3C/svg%3E">
-
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
@@ -31,7 +30,6 @@
 
         <div
             class="flex flex-col md:flex-row gap-4 mb-4 items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-200">
-
             <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
                 <button onclick="document.getElementById('fileInput').click()"
                     class="px-4 py-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 text-sm font-semibold rounded-lg shadow-sm transition-all flex items-center">
@@ -74,7 +72,7 @@
                 <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Raw JSON Input</label>
                 <textarea id="jsonInput" spellcheck="false"
                     class="w-full h-[500px] p-5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm resize-y shadow-inner transition-all leading-relaxed"
-                    placeholder='Paste your messy JSON here or select a sample from the toolbar...'></textarea>
+                    placeholder='Paste your messy JSON here...'></textarea>
             </div>
 
             <div class="relative flex flex-col">
@@ -99,33 +97,35 @@
 
     <section
         class="max-w-6xl mx-auto w-full bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 text-gray-700 leading-relaxed mb-12 px-4">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">The Ultimate Free Online JSON Tool for Developers</h2>
-        <p class="mb-6 text-lg">
-            Welcome to your all-in-one solution for managing JSON data. Whether you need a <strong>JSON
-                Formatter</strong> to make messy code readable, a <strong>JSON Validator</strong> to debug errors, or a
-            <strong>JSON Minifier</strong> to compress data for production, our tool handles it all instantly and
-            securely.
-        </p>
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Online JSON Formatter & Beautifier: Why Use It?</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <i class="fa-solid fa-wand-magic-sparkles text-blue-600 text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Instant Formatting</h3>
-                <p class="text-sm text-gray-600">Paste raw, ugly JSON strings and transform them into perfectly
-                    indented, easy-to-read code structure with a single click.</p>
-            </div>
-            <div class="bg-green-50 p-6 rounded-xl border border-green-100">
-                <i class="fa-solid fa-lock text-green-600 text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">100% Secure (Client-Side)</h3>
-                <p class="text-sm text-gray-600">Your data never leaves your browser. All processing happens locally,
-                    ensuring maximum privacy for sensitive information.</p>
-            </div>
-            <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
-                <i class="fa-solid fa-file-zipper text-purple-600 text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">JSON Minifier</h3>
-                <p class="text-sm text-gray-600">Compress your JSON by removing unnecessary whitespace to reduce file
-                    size and improve API performance.</p>
-            </div>
+        <div class="space-y-6 text-lg">
+            <p>
+                Working with minified JSON can be a nightmare for developers. Our <strong>Online JSON Formatter</strong>
+                is designed to solve this by transforming messy, one-line JSON strings into a clean, human-readable
+                format. Whether you are debugging an API response or organizing configuration files, our <strong>JSON
+                    Beautifier</strong> ensures your data is perfectly indented and easy to read.
+            </p>
+
+            <h3 class="text-2xl font-bold text-blue-600">Key Benefits of JSON Beautification</h3>
+            <ul class="list-disc pl-6 space-y-3">
+                <li><strong>Improved Readability:</strong> Proper indentation makes complex nested objects easy to
+                    understand.</li>
+                <li><strong>Error Detection:</strong> Our tool acts as a <strong>JSON Validator</strong>, highlighting
+                    syntax errors instantly.</li>
+                <li><strong>Optimized Workflow:</strong> Save time during development by quickly minifying or
+                    beautifying your code.</li>
+                <li><strong>100% Privacy:</strong> Unlike other tools, we process your data locally in your browser.
+                    Your sensitive information is never sent to any server.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-blue-600">How to Format JSON?</h3>
+            <ol class="list-decimal pl-6 space-y-2">
+                <li>Paste your raw or minified JSON code into the editor.</li>
+                <li>Click the <strong>"Beautify"</strong> button to apply indentation.</li>
+                <li>If you want to save space, use the <strong>"Minify"</strong> option.</li>
+                <li>Copy the formatted output with a single click.</li>
+            </ol>
         </div>
     </section>
 
@@ -142,20 +142,22 @@
             </div>
 
             <div>
-                <h4 class="text-lg font-bold text-white mb-4">Our Tools</h4>
+                <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold whitespace-nowrap">
+                    <a href="about.html" class="hover:text-blue-400 transition-colors">About Us</a>
+                    <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-blue-400 transition-colors">Terms of Service</a>
+                    <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact Us</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Other Projects</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-blue-400 transition-colors"><i
-                                class="fa-solid fa-angle-right mr-2 text-blue-500"></i>JSON Formatter</a></li>
                     <li><a href="https://cv-builder-mauve-six.vercel.app/" target="_blank"
                             class="hover:text-blue-400 transition-colors"><i
                                 class="fa-solid fa-angle-right mr-2 text-blue-500"></i>Online CV Builder</a></li>
                 </ul>
-            </div>
-
-            <div class="flex justify-center gap-6 mb-4 text-sm font-semibold text-gray-500">
-                <a href="privacy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-blue-600 transition-colors">Terms of Service</a>
-                <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact Us</a>
             </div>
         </div>
         <div
@@ -169,62 +171,19 @@
         const inputField = document.getElementById('jsonInput');
         const outputField = document.getElementById('jsonOutput');
 
-        // NEW: JSON Templates Data
         const templates = {
-            user: {
-                "id": 84729,
-                "status": "active",
-                "profile": {
-                    "username": "developer_pro",
-                    "fullName": "Zain Zahid",
-                    "email": "zain@example.com",
-                    "skills": ["HTML", "Tailwind CSS", "JavaScript", "React"]
-                },
-                "preferences": {
-                    "theme": "dark",
-                    "notifications": true
-                }
-            },
-            ecommerce: {
-                "storeName": "Tech Hub",
-                "products": [
-                    { "id": 101, "name": "Wireless Mouse", "price": 29.99, "inStock": true },
-                    { "id": 102, "name": "Mechanical Keyboard", "price": 89.50, "inStock": false },
-                    { "id": 103, "name": "4K Monitor", "price": 349.00, "inStock": true }
-                ]
-            },
-            nested: {
-                "company": "API Systems Inc.",
-                "departments": {
-                    "engineering": {
-                        "head": "Sarah Connor",
-                        "employees": 45,
-                        "projects": [
-                            { "name": "Auth Service", "status": "In Progress" },
-                            { "name": "Data Pipeline", "status": "Completed" }
-                        ]
-                    },
-                    "marketing": {
-                        "head": "John Smith",
-                        "budget": 500000
-                    }
-                }
-            }
+            user: { "id": 84729, "status": "active", "profile": { "username": "developer_pro", "fullName": "Zain Zahid", "skills": ["HTML", "JavaScript"] } },
+            ecommerce: { "storeName": "Tech Hub", "products": [{ "id": 101, "name": "Wireless Mouse", "price": 29.99 }] },
+            nested: { "company": "API Systems", "departments": { "engineering": { "head": "Sarah", "projects": ["Auth", "Data"] } } }
         };
 
-        // NEW: Function to load template
         function loadTemplate() {
-            const selector = document.getElementById('templateSelector');
-            const selectedKey = selector.value;
-
+            const selectedKey = document.getElementById('templateSelector').value;
             if (templates[selectedKey]) {
-                // Stringify with 0 spaces so it looks "raw/messy" initially
                 inputField.value = JSON.stringify(templates[selectedKey]);
-                // Automatically format it so the user sees the magic instantly
                 formatJSON();
             }
-            // Reset dropdown
-            selector.selectedIndex = 0;
+            document.getElementById('templateSelector').selectedIndex = 0;
         }
 
         function formatJSON() {
@@ -257,9 +216,26 @@
         }
 
         function copyOutput() {
-            if (!outputField.value.trim()) return alert("Nothing to copy!");
-            navigator.clipboard.writeText(outputField.value);
-            alert("Copied to clipboard!");
+            const copyBtn = event.currentTarget;
+            const originalHTML = copyBtn.innerHTML;
+
+            if (!outputField.value.trim()) {
+                return;
+            }
+
+            navigator.clipboard.writeText(outputField.value).then(() => {
+
+                copyBtn.innerHTML = '<i class="fa-solid fa-check mr-1.5"></i>Copied!';
+                copyBtn.classList.replace('bg-gray-200', 'bg-green-500');
+                copyBtn.classList.replace('text-gray-800', 'text-white');
+
+
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHTML;
+                    copyBtn.classList.replace('bg-green-500', 'bg-gray-200');
+                    copyBtn.classList.replace('text-white', 'text-gray-800');
+                }, 2000);
+            });
         }
 
         function downloadJSON() {
